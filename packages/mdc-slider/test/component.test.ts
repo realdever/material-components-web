@@ -181,11 +181,11 @@ describe('MDCSlider', () => {
       spyOn(startThumb, 'getBoundingClientRect').and.returnValue({
         left: initialValueStart - 3,
         right: initialValueStart + 3,
-      });
+      } as DOMRect);
       spyOn(endThumb, 'getBoundingClientRect').and.returnValue({
         left: initialValueEnd - 3,
         right: initialValueEnd + 3,
-      });
+      } as DOMRect);
     });
 
     it('press + move on start thumb updates start thumb value', () => {
@@ -278,11 +278,11 @@ describe('MDCSlider', () => {
           .and.returnValue({
             left: valueStart - 3,
             right: valueStart + 3,
-          });
+          } as DOMRect);
       spyOn(endThumb, 'getBoundingClientRect').and.returnValue({
         left: value - 3,
         right: value + 3,
-      });
+      } as DOMRect);
 
       // Update start thumb value.
       const downEventStart = createEventFrom('pointer', 'down', {clientX: 3});
@@ -322,11 +322,11 @@ describe('MDCSlider', () => {
           .and.returnValue({
             left: valueStart - 3,
             right: valueStart + 3,
-          });
+          } as DOMRect);
       spyOn(endThumb, 'getBoundingClientRect').and.returnValue({
         left: value - 3,
         right: value + 3,
-      });
+      } as DOMRect);
 
       expect(startThumb!.textContent!.trim()).not.toBe('0');
       expect(endThumb.textContent!.trim()).not.toBe('90');
@@ -551,7 +551,7 @@ describe('MDCSlider', () => {
         left: 0,
         right: 50,
         width: 50,
-      });
+      } as DOMRect);
       emitEvent(window, 'resize');
 
       jasmine.clock().tick(1);  // Tick for RAF.
@@ -635,7 +635,7 @@ function setUpTest(
     left: 0,
     right: 100,
     width: 100,
-  });
+  } as DOMRect);
 
   document.body.appendChild(root);  // Removed in #afterEach.
   const component = MDCSlider.attachTo(root);

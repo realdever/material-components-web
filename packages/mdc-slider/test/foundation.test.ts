@@ -1051,7 +1051,7 @@ describe('MDCSliderFoundation', () => {
 
     it('RTL: increments/decrements value for ARROW_LEFT/ARROW_RIGHT keypresses',
        () => {
-         const {foundation, mockAdapter} = setUpAndInit({
+         const {foundation} = setUpAndInit({
            value: 50,
            isDiscrete: true,
            step: 2,
