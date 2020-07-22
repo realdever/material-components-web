@@ -20,4 +20,6 @@
 // THE SOFTWARE.
 //
 
-@forward "../select-helper-text-theme";
+@use "./select";
+
+@include select.core-styles;
